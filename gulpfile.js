@@ -8,7 +8,7 @@ var rename = require('gulp-rename');
 var del = require('del');
 
 gulp.task('resize', function () {
-    return gulp.src('images/*.*')
+    return gulp.src('images/original/*.*')
         .pipe(imageResize({
             width: 1024,
             imageMagick: true
@@ -21,9 +21,9 @@ gulp.task('resize', function () {
         .pipe(gulp.dest('images/thumbs'));
 });
 
-gulp.task('del', ['resize'], function () {
-    return del(['images/*.*']);
-});
+// gulp.task('del', ['resize'], function () {
+//     return del(['images/*.*']);
+// });
 
 // compile scss to css
 gulp.task('sass', function () {
