@@ -16,15 +16,16 @@ layout: default
     </header>
 
     <!-- Main -->
-    <div id="main">
+    <div id="main" data-exif-display='{{ site.exif_display }}'>
         {% for image in site.static_files %}
         {% if image.path contains 'fulls' %}
         <article class="thumb">
             <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
-                <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt=""
+                <!--  -->
+                <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" 
+                    alt="alternative" 
                      data-name="{{ image.name }}"/></a>
-            <!--<h2></h2>
-            <p></p>-->
+            <h2>{{ image.name }}</h2>
         </article>
         {% endif %}
         {% endfor %}
